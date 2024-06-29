@@ -13,7 +13,9 @@
 
   <body>
     <header>
-      <span>Bookers</span>
+      <span>
+        <%= link_to "Bookers", root_path %>
+      </span>
       <% if user_signed_in? %>
         <li>
           <%= link_to "Home", root_path %>
@@ -42,6 +44,15 @@
         </li>
       <% end %>
     </header>
+    <footer>
+      <div class="container mt-5">
+  	    <div class="row">
+        	<div class="mx-auto">
+        		<p>CopyRight Infratop.inc</p>
+        	</div>
+        </div>
+      </div>
+    </footer>
     <%= yield %>
   </body>
 </html>
