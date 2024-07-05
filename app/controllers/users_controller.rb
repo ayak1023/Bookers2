@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
+    if current_user == @user
+      flash.now[:notice] = "Signed in successfully."
+      flash.discard(:notice)
+    end
   end
 
   def edit
