@@ -1,8 +1,19 @@
 <!---book_index-->
-
 <div class="container">
+  <div class="col-8 p-0">
+    <% if @book_new.errors.any? %>
+      <h3><%= @book_new.errors.count %>errors prohibited this obj from being saved:</h3>
+      <ul>
+        <% @book_new.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <div class="row">
     <%= render 'side', book: @book_new, user: current_user %>
+
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
       <table class="table table-hover table-inverse">

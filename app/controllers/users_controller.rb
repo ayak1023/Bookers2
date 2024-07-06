@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def create
     if @user.save
       flash[:notice] = "Welcome! You have signed up successfully."
+    else
+      render :root_path
     end
   end
 
@@ -26,6 +28,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       flash[:notice] = "You have updated book successfully."
       redirect_to user_path(current_user.id)
+    else
+      render :edit
     end
   end
 

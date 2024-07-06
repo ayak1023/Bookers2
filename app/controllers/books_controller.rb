@@ -20,15 +20,20 @@ class BooksController < ApplicationController
     @book_new.user_id = current_user.id
     if @book_new.save
       flash[:notice] = "You have created book successfully."
-      redirect_to book_path(@book_new.id)
+      redirect_to book_path(@book.id)
+    else
+      @books = Book.all  # エラー時に書籍一覧を再度取得する
+      render :index
     end
   end
 
   def update
-    book = Book.find(params[:id])
-    if book.update(book_params)
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
       flash[:notice] = "You have updated book successfully."
       redirect_to book_path(book.id)
+    else
+      render :edit
     end
   end
 
