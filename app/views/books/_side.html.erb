@@ -1,13 +1,10 @@
     <div class="col6 col-md-3">
       <h2>User info</h4>
-      <%= image_tag current_user.get_profile_image(100,100) %>
+      <%= image_tag user.get_profile_image(100,100) %>
       <table class="table"><tbody>
         <tr>
-
           <th>name</th>
-
             <th><%= user.name %></th>
-
         </tr>
         <tr>
           <th>introduction</th>
@@ -24,7 +21,7 @@
       </div>
 
       <h2 class="mt-4">New book</h4>
-      <%= form_with model: book do |f| %> <!--@book-->
+      <%= form_with model: book do |f| %>
         <div class="mb-3">
           <p class="mb-0">Title</p>
           <%= f.text_field :title ,class:"form-control" %>
