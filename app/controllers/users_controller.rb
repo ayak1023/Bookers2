@@ -2,16 +2,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    #@user = User.find(params[:id])
-    #@books = @user.books
   end
 
   def show
     @user = User.find(params[:id])
     @books = @user.books
     if current_user == @user
-      flash.now[:notice] = "Signed in successfully."
-      flash.discard(:notice)
+      flash[:notice] = "Signed in successfully."
     end
   end
 
@@ -21,8 +18,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(current_user.id)
+    if @user.update(user_params)
+      flash[:notice] = "You have updated book successfully."
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private
