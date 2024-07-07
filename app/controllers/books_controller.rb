@@ -20,7 +20,7 @@ class BooksController < ApplicationController
     @book_new.user_id = current_user.id
     if @book_new.save
       flash[:notice] = "You have created book successfully."
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@book_new.id)#fix
     else
       @books = Book.all  # エラー時に書籍一覧を再度取得する
       render :index
