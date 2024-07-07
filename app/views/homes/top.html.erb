@@ -1,13 +1,25 @@
 <div class="container">
-  <div class="d-flex flex-column mb-3">
-    <div class="col-6 mx-auto">
-      <h1>welcome to <i class="fa-solid fa-book"></i><b>Bookers</b> !!</h1>
-      <p>In <i class="fa-solid fa-book"></i><b>Bookers</b>,
-      <br>you can share and exchange your opinions , inpressions , and emotions
-      <br>about various books!</p>
-      <div class="mx-auto px-5">
-        <%= link_to "Log in", new_user_session_path ,class:"btn btn-info btn-sm btn-block mb-3 sign_in" %>
-        <%= link_to "Sign up", new_user_registration_path ,class:"btn btn-success btn-sm btn-block sign_up" %>
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>welcome to
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512">
+          <path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+        </svg>
+        <b>Bookers</b> !!
+      </h1>
+      <p>In
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+          <path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+        </svg>
+        <b>Bookers</b>,
+      </p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to "Log in", new_user_session_path ,class:"btn btn-info btn-sm btn-block mb-3 sign_in" %>
+          <%= link_to "Sign up", new_user_registration_path ,class:"btn btn-success btn-sm btn-block sign_up" %>
+        </div>
       </div>
     </div>
   </div>
